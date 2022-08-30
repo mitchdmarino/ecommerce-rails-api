@@ -4,7 +4,9 @@ Use this repository as a basic rails Auth system. It uses JWT tokens to authenti
 
 To install,
 
-git clone https://github.com/martynbiz/human_services_finder.git
+```
+git clone https://github.com/mitchdmarino/Rails-Auth.git
+```
 
 Install all dependencies
 
