@@ -4,20 +4,18 @@ class UsersController < ApplicationController
     before_action :authorize_admin, only: [:index]
 
     # GET /users
-    
+    # only admin access
     def index
         @users = User.all
         render json: @users, status: :ok
     end
 
     # GET /users/{username}
-    
     def show 
-        render json: @user, status: :ok
+        render json: @current_user, status: :ok
     end
 
     # POST /users
-    
     def create
         @user = User.new(user_params)
         if @user.save
@@ -30,7 +28,7 @@ class UsersController < ApplicationController
     
     # PUT /users/{username}
     def update
-        unless @user.update(user_params)
+        unless @current_user.update(user_params)
             render json: {errors: @user.errors.full_messages},
             status: :unprocessable_entity
         end
@@ -38,7 +36,9 @@ class UsersController < ApplicationController
 
     #DELETE /users/{username}
     def destroy 
-        @user.destroy
+        @current_user.destroy
+        render json: {msg: 'User Deleted'},
+        status: :ok
     end
 
     private 
