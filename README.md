@@ -1,6 +1,6 @@
 # Rails Ecommerce App
 
-Use this repository as a basic rails Auth system. It uses JWT tokens to authenticate users.
+This is a basic Ecommerce API built with Rails
 
 To install,
 
