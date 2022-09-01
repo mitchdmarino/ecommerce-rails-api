@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+    has_many :orders
     require "securerandom"
 
     has_secure_password
