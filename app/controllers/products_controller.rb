@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
         render json: {error: 'Admins only'}
     end
     def product_params 
-        params.permit(:name, :price, :description)
+        params.permit(:name, :price, :description, :image)
     end
     def set_product
         @product = Product.find(params[:id])
