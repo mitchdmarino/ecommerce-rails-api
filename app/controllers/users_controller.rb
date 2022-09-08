@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            token = jwt_encode(user_id: @user.id, name: @user.name, email: @user.email, admin: @user.admin)
+            token = jwt_encode(user_id: @user.id, name: @user.name, email: @user.email, admin: @user.admin, username: @user.username)
             render json: { token: token }, status: :created
        else
         render json: { erros: @user.errors.full_messages },
