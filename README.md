@@ -32,3 +32,5 @@ Now run your application
 rails s
 
 Authentication: JWT tokens created by Rails API
+
+Frontend Repo: https://github.com/mitchdmarino/ecommerce-rails-client
